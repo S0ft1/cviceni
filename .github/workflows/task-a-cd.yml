@@ -8,7 +8,8 @@ jobs:
     name: pytest
     steps:
        - uses: actions/upload-artifact
-         run:--html=report.html 
+         - name: artifact
+           run: --html=report.html
        - uses: actions/checkout@v4
         - name: Set up Python
           uses: actions/setup-python@v5
