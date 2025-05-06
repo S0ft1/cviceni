@@ -19,9 +19,9 @@ jobs:
             pytest task_a/task_a.py
 
   htmlArtifact:
-    runs-on "ubuntu-latest"
+    runs-on: "ubuntu-latest"
     name: artifact
     steps:
        - uses: actions/upload-artifact
          - name: artifact
-           run: --html=report.html 
+           run: --html=report.html
