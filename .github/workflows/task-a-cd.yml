@@ -7,10 +7,7 @@ jobs:
     runs-on: "ubuntu-latest"
     name: pytest
     steps:
-       - uses: actions/upload-artifact
-         - name: artifact
-           run: --html=report.html
-       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         - name: Set up Python
           uses: actions/setup-python@v5
           with:
@@ -20,3 +17,11 @@ jobs:
           run: |
             pip install -r ./task_a/requirements.txt
             pytest task_a/task_a.py
+
+  htmlArtifact:
+    runs-on "ubuntu-latest"
+    name: artifact
+    steps:
+       - uses: actions/upload-artifact
+         - name: artifact
+           run: --html=report.html 
